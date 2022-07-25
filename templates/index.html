@@ -1,0 +1,24 @@
+<head>
+    <title>Yash's BMI Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<h1>BMI Calculator</h1>
+<body>
+
+    <div class="main">
+        <form class ="pure-form" method="POST" action="/">
+        Enter your weight in kgs:<br>
+        <input type = 'text' name="weight"><br>
+        Enter your height in kgs:<br>
+        <input type = 'text' name="height"><br>
+        <button type="submit" value="Submit" class="pure-button pure-button-primary">Submit</button>
+        </form>
+    </div>
+    <br>
+    <div class="main">
+        {% if bmi %}
+            <p>This is your BMI: {{ bmi }}</p>
+        {% endif %}
+    </div>
+</body>
